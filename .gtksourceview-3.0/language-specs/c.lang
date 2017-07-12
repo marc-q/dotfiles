@@ -52,6 +52,7 @@
     <style id="standard-stream"   _name="Standard stream"       map-to="def:constant"/>
     <style id="signal-name"       _name="Signal name"           map-to="def:constant"/>
     <style id="error"             _name="Error"                 map-to="def:error"/>
+    <style id="function"          _name="Function"              map-to="def:function"/>
   </styles>
 
   <definitions>
@@ -190,6 +191,15 @@
         (?![\w\.])
       </match>
     </context>
+    
+     <context id="function">
+       <match extended="true">
+         ([a-zA-Z_][a-zA-Z_0-9]*)\s*\(
+       </match>
+       <include>
+         <context id="function-name" sub-pattern="1" style-ref="function"/>
+       </include>
+     </context>
 
     <context id="keywords" style-ref="keyword">
       <keyword>asm</keyword>
@@ -337,6 +347,7 @@
         <context ref="common-defines"/>
         <context ref="standard-streams"/>
         <context ref="signals"/>
+        <context ref="function"/>
       </include>
     </context>
 
