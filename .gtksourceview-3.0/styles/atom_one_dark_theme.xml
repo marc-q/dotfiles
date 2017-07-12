@@ -54,6 +54,7 @@
 
   <!-- Identifiers -->
   <style name="def:identifier"              foreground="hue62"/>
+  <style name="def:function"                foreground="hue2"/>
 
   <!-- Statements -->
   <style name="def:statement"               foreground="hue3"/>
